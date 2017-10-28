@@ -94,6 +94,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 311);
+            this.ControlBox = false;
             this.Controls.Add(this.Generation);
             this.Controls.Add(this.EnemyLabel);
             this.Controls.Add(this.MsgLabel);

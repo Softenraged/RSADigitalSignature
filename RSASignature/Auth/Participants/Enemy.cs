@@ -15,15 +15,23 @@ namespace RSASignature.Auth.Participants
             this.message = message;
         }
 
+        /// <summary>
+        /// Произвести атаку на сервер
+        /// </summary>
+        /// <returns>Фальсифисированная пара [сообщение, цифровая подпись]</returns>
         public async Task<Signature> Attack()
         {
             var fabricatedSignature = FabricateSignature();
 
-            //вернуть пару [сообщение, подпись]
+            //вернуть п [сообщение, подпись]
             return new Signature(message, await fabricatedSignature);
         }
 
 
+        /// <summary>
+        /// Сгенерировать ложную подпись
+        /// </summary>
+        /// <returns>Фальсифицированная подпись</returns>
         private async Task<BigInteger> FabricateSignature()
         {
             return await Task.Factory.StartNew(() => {

@@ -76,12 +76,20 @@ namespace RSASignature.Auth.Participants
 
         }
 
+        /// <summary>
+        /// Передать открытый ключ на сервер
+        /// </summary>
+        /// <returns>Открытый ключ</returns>
         public PublicKey PassPublicKey()
         {
             return keys.PublicKey;
         }
 
 
+        /// <summary>
+        /// Отправить запрос на сервер
+        /// </summary>
+        /// <returns> Пара [сообщение, цифровая подпись]</returns>
         public async Task<Signature> Send()
         {
             //получить хеш - образ сообщения
