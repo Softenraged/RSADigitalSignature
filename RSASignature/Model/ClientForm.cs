@@ -36,8 +36,6 @@ namespace RSASignature.Model
 
         private async void SendRequest(object sender, EventArgs e)
         {
-            var watch = new Stopwatch();
-            watch.Start();
             Request.Enabled = false;
 
             client.Message = Message.Text;

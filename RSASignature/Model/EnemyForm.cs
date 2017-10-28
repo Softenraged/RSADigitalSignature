@@ -27,8 +27,7 @@ namespace RSASignature.Model
 
         private async void Attack(object sender, EventArgs e)
         {
-            var watch = new Stopwatch();
-            watch.Start();
+
             AttackBtn.Enabled = false;
 
             enemy.CatchMessage(Message.Text);
@@ -41,8 +40,6 @@ namespace RSASignature.Model
             }
 
             AttackBtn.Enabled = true;
-            watch.Stop();
-            var time = watch.Elapsed;
         }
 
 
