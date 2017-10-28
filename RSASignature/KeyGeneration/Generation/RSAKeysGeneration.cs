@@ -29,10 +29,12 @@ namespace RSASignature.KeyGeneration.Generation
 
         private async Task Initialize(BigInteger p, BigInteger q, BigInteger exp)
         {
-            var pIsProbablyPrime = await Task.Factory.StartNew(() => p.IsProbablyPrime());
-            var qIsProbablyPrime = await Task.Factory.StartNew(() => q.IsProbablyPrime());
 
-            if (!pIsProbablyPrime || !qIsProbablyPrime)
+            var isPrime = await Task.WhenAll(Task.Run(() => p.IsProbablyPrime()), 
+                                             Task.Run(() => q.IsProbablyPrime())
+                                            );
+
+            if (!isPrime[0] || !isPrime[1])
             {
                 throw new ArithmeticException("Число p или q не является простым.");
             }
