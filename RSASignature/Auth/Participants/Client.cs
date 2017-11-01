@@ -100,7 +100,7 @@ namespace RSASignature.Auth.Participants
             if (msgHash < 0)
             {
                 //скорректировать его
-                msgHash = ((BigInteger.One << 256) - BigInteger.Abs(msgHash));
+                msgHash = (BigInteger.One << 256) + msgHash;
             }
 
             //выработать цифровую подпись, используя закрытый ключ
