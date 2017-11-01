@@ -1,6 +1,5 @@
 ﻿using RSASignature.Util.Extensions;
 using System.Numerics;
-using System.Threading.Tasks;
 
 namespace RSASignature.Util
 {

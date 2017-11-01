@@ -1,15 +1,8 @@
 ﻿using RSASignature.Auth.Participants;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Drawing;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RSASignature.Util;
-using System.Diagnostics;
+
 
 namespace RSASignature.Model
 {
@@ -26,7 +19,7 @@ namespace RSASignature.Model
         }
 
         public async Task Initialize()
-        { 
+        {
 
             client = await Client.Create();
             server.AcceptKey(client.PassPublicKey());
